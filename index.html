@@ -1,192 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obsidian Studio | Mila Luxx</title>
-    <style>
-        :root {
-            --obsidian: #0a0a0a;
-            --charcoal: #1f1f1f;
-            --river: #2a3a2f;
-            --eagle: #c9b89e;
-        }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Georgia', serif;
-            background: var(--obsidian);
-            color: #ddd;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background: rgba(10,10,10,0.95);
-            z-index: 100;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #333;
-        }
-        .logo { font-size: 1.8rem; letter-spacing: 2px; color: var(--eagle); }
-        nav a {
-            color: #ddd; margin-left: 2rem; text-decoration: none;
-            transition: color 0.3s;
-        }
-        nav a:hover { color: var(--eagle); }
-        
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-        .hero h1 {
-            font-size: 4.5rem;
-            color: white;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-        }
-        .hero p {
-            font-size: 1.4rem;
-            color: var(--eagle);
-            margin-bottom: 2rem;
-        }
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            border: 2px solid var(--eagle);
-            color: var(--eagle);
-            text-decoration: none;
-            transition: all 0.4s;
-        }
-        .btn:hover {
-            background: var(--eagle);
-            color: #111;
-        }
-        
-        section { padding: 8rem 5%; }
-        .about { background: var(--charcoal); }
-        .gallery { background: var(--obsidian); }
-        .shop { background: var(--river); }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: #111;
-            overflow: hidden;
-            transition: transform 0.4s;
-        }
-        .card:hover { transform: scale(1.03); }
-        .card img { width: 100%; height: 280px; object-fit: cover; }
-        .card-content { padding: 1.5rem; }
-        
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 3rem;
-            font-size: 0.9rem;
-        }
-        
-        /* Lightbox */
-        #lightbox {
-            display: none;
-            position: fixed; top:0; left:0; width:100%; height:100%;
-            background: rgba(0,0,0,0.95); z-index: 1000;
-            align-items: center; justify-content: center;
-        }
-        #lightbox img { max-width: 90%; max-height: 90%; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obsidian Wing Studio | Mila LUXX Creative</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #050505;
+      color: #f2eee7;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #c7a45b;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    header {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+        url("hero.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: #c7a45b;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+      color: #ddd0c0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.9rem 1.5rem;
+      border: 1px solid #c7a45b;
+      color: #c7a45b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+    }
+
+    .button:hover {
+      background: #c7a45b;
+      color: #050505;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(5,5,5,0.95);
+      border-bottom: 1px solid #1d1d1d;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      color: #f7f1e8;
+      text-transform: uppercase;
+    }
+
+    .gold {
+      color: #c7a45b;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      max-width: 780px;
+      color: #d8d0c5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #0d0d0d;
+      border: 1px solid #242424;
+      padding: 1.5rem;
+    }
+
+    .card h3 {
+      color: #c7a45b;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border: 1px solid #222;
+      filter: contrast(1.05) saturate(0.9);
+    }
+
+    .quote {
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      color: #c7a45b;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .contact-box {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 1px solid #1d1d1d;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      nav a {
+        display: inline-block;
+        margin: 0.4rem;
+      }
+
+      .gallery img {
+        height: 260px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="logo">OBSIDIAN STUDIO</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#gallery">Work</a>
-            <a href="#shop">Shop Prints</a>
-            <a href="#memoir">Memoir</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Mila Luxx</h1>
-            <p>Wilderness witnessed. Eagles and rivers. Beauty beside ruin.</p>
-            <a href="#shop" class="btn">View Limited Prints</a>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2 style="text-align:center; margin-bottom:3rem; font-size:2.8rem;">Who Am I?</h2>
-        <p style="max-width:700px; margin:0 auto; font-size:1.2rem;">Photographer. Mother. Widow. Survivor. I point the lens at what refuses to be forgotten — the shadowed branch, the river that keeps moving, the bird that claims the sky anyway. This work is the visual language of the memoir I'm writing. Raw. Unflinching. True.</p>
-    </section>
-
-    <section id="gallery" class="gallery">
-        <h2 style="text-align:center; margin-bottom:4rem;">Selected Work</h2>
-        <div class="grid">
-            <!-- Add more of your real images here -->
-            <div class="card" onclick="openLightbox('https://picsum.photos/id/1015/1200/800')">
-                <img src="https://picsum.photos/id/1015/600/400" alt="Bald eagle shadowed branch">
-                <div class="card-content">
-                    <h3>Claiming the Branch</h3>
-                    <p>Limited edition print • Various sizes</p>
-                </div>
-            </div>
-            <!-- Duplicate cards for more images -->
-        </div>
-    </section>
-
-    <section id="shop" class="shop">
-        <h2 style="text-align:center; margin-bottom:4rem;">Limited Prints</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://picsum.photos/id/1015/600/400" alt="Eagle print">
-                <div class="card-content">
-                    <h3>Claiming the Branch</h3>
-                    <p>Archival pigment print on Hahnemühle paper. Signed & numbered.</p>
-                    <p><strong>$250 – $850</strong></p>
-                    <a href="https://www.paypal.com" class="btn" style="margin-top:1rem; font-size:0.9rem;">Buy with PayPal</a>
-                    <!-- Later: Stripe integration -->
-                </div>
-            </div>
-            <!-- More cards -->
-        </div>
-    </section>
-
-    <section id="memoir">
-        <h2 style="text-align:center;">From the Memoir “Who Am I?”</h2>
-        <p style="max-width:700px; margin:3rem auto;">[Insert short excerpt here — we'll pull powerful passages that echo the photos]</p>
-    </section>
-
-    <footer>
-        <p>© Mila Luxx • Obsidian Studio. All rights reserved.</p>
-        <p>Photography that refuses silence.</p>
-    </footer>
-
-    <div id="lightbox" onclick="this.style.display='none'">
-        <img id="lightbox-img" src="" alt="">
+  <header>
+    <div class="hero">
+      <div class="eyebrow">Mila LUXX Creative</div>
+      <h1>Obsidian Wing Studio</h1>
+      <p class="tagline">
+        Dark, elegant photography for wild hearts, strange love, and stories with teeth.
+      </p>
+      <a href="#contact" class="button">Book / Inquire</a>
     </div>
+  </header>
 
-    <script>
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
-    </script>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>Beauty with <span class="gold">a blade</span></h2>
+    <p class="intro">
+      Obsidian Wing Studio is a dark fine-art photography studio built for people who do not want soft beige memories and corporate little smiles.  
+      This is for the raw ones. The haunted ones. The lovers, the survivors, the collectors, the art directors, the wild brides, the black-sheep families, and anyone who wants their images to feel alive.
+    </p>
+  </section>
+
+  <section id="work">
+    <h2>Selected Work</h2>
+    <p class="intro">
+      Wildlife, portraits, weddings, editorial sessions, celestial skies, river ghosts, ravens, eagles, and whatever else refuses to die quietly.
+    </p>
+
+    <div class="gallery">
+      <img src="hero.jpg" alt="Obsidian Wing Studio feature image">
+      <img src="fight.jpg" alt="Bald eagles in motion">
+      <img src="snow-eagles.jpg" alt="Eagles in winter">
+      <img src="perched1.jpg" alt="Fine art wildlife portrait">
+      <img src="portrait.jpg" alt="Dark artistic portrait">
+      <img src="moon.jpg" alt="Celestial photography">
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Fine Art Prints</h3>
+        <p>Limited-edition wildlife, eagle, sky, and landscape pieces for collectors, offices, galleries, and homes with actual taste.</p>
+      </div>
+
+      <div class="card">
+        <h3>Portrait Sessions</h3>
+        <p>Dark, cinematic portraits for artists, rebels, writers, lovers, and people tired of looking like they were photographed in a dentist’s waiting room.</p>
+      </div>
+
+      <div class="card">
+        <h3>Editorial & Brand</h3>
+        <p>Moody, high-impact imagery for art directors, creative businesses, musicians, makers, and brands with a pulse.</p>
+      </div>
+
+      <div class="card">
+        <h3>Alternative Weddings</h3>
+        <p>For couples who want emotion, atmosphere, elegance, and a little thunder instead of pastel nonsense and dead-eyed chair covers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="quote">
+      “For the ones who were never meant to be polished. Only sharpened.”
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="intro">
+      Booking, print inquiries, collaborations, editorial work, and strange beautiful ideas are welcome.
+    </p>
+
+    <div class="contact-box">
+      <p><strong>Email:</strong> <a href="mailto:milaluxx.official@gmail.com">milaluxx.official@gmail.com</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/obsidianwing_studio" target="_blank">@obsidianwing_studio</a></p>
+      <p><strong>Location:</strong> New Brunswick, Canada</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Obsidian Wing Studio by Mila LUXX Creative. All rights reserved.</p>
+    <p>Eagle as my witness.</p>
+  </footer>
+
 </body>
 </html>
