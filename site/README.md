@@ -1,0 +1,1 @@
+Studio site lives in this repo under site/ once uploaded. Local build is the full multi-page shop.
