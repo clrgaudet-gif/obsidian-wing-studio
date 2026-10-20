@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obsidian Wing Studio | Fine Art Wildlife Photography by Mila Luxx</title>
-  <meta name="description" content="Dark, raw fine art wildlife photography from New Brunswick. Limited edition prints of eagles, ravens, and the untamed Atlantic Canadian wilderness. Shop prints online.">
+  <meta name="description" content="Dark, raw fine art wildlife photography from New Brunswick. Limited edition prints of eagles, ravens, and the untamed Atlantic Canadian wilderness. Shop prints online — not Etsy.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -31,7 +31,7 @@
     a:hover { color: #fff; }
     nav {
       position: fixed; top:0; left:0; right:0; z-index:100;
-      background: rgba(10,10,10,0.85); backdrop-filter: blur(12px);
+      background: rgba(10,10,10,0.9); backdrop-filter: blur(12px);
       padding: 20px 40px; display:flex; justify-content:space-between; align-items:center;
       border-bottom: 1px solid rgba(201,169,98,0.15);
     }
@@ -41,83 +41,90 @@
     .nav-links a:hover { color: var(--gold); }
     .hero {
       height: 100vh; display:flex; align-items:center; justify-content:center; text-align:center;
-      background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.75)),
-                  url('https://images.unsplash.com/photo-1615824996195-f780bba7cfab?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      background: linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.8)),
+                  url('https://images.unsplash.com/photo-1551184451-76b762941ad6?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
       position: relative;
     }
     .hero-content h1 {
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      letter-spacing: 12px;
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      letter-spacing: 14px;
       text-transform: uppercase;
       color: #f0f0f0;
-      margin-bottom: 16px;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+      margin-bottom: 12px;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.9);
     }
     .hero .tagline {
-      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-size: clamp(1.2rem, 2.8vw, 1.8rem);
       color: var(--gold);
-      margin-bottom: 24px;
-      letter-spacing: 3px;
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+      font-weight: 400;
     }
-    .hero .location { opacity:0.8; font-size:1rem; letter-spacing:2px; }
+    .hero .location { opacity:0.75; font-size:1.05rem; letter-spacing:2.5px; }
     .cta {
-      display:inline-block; margin-top:40px; padding:16px 40px;
-      border:1px solid var(--gold); color:var(--gold); letter-spacing:2px;
-      text-transform:uppercase; font-size:0.85rem; transition:0.4s;
+      display:inline-block; margin-top:48px; padding:18px 48px;
+      border:1px solid var(--gold); color:var(--gold); letter-spacing:2.5px;
+      text-transform:uppercase; font-size:0.9rem; transition:0.4s;
     }
     .cta:hover { background:var(--gold); color:#0a0a0a; }
-    section { padding: 120px 40px; max-width: 1200px; margin:0 auto; }
+    section { padding: 140px 40px; max-width: 1280px; margin:0 auto; }
     .section-title {
-      text-align:center; font-size: clamp(2.2rem, 5vw, 3.8rem);
-      color: var(--gold); margin-bottom: 60px; letter-spacing:6px;
+      text-align:center; font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      color: var(--gold); margin-bottom: 70px; letter-spacing:7px;
     }
-    .about-text { max-width:720px; margin:0 auto; text-align:center; font-size:1.15rem; }
-    .about-text p { margin-bottom:24px; }
+    .about-text { max-width:760px; margin:0 auto; text-align:center; font-size:1.2rem; }
+    .about-text p { margin-bottom:28px; }
     .gallery {
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap:24px; margin-top:40px;
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap:28px; margin-top:50px;
     }
     .gallery-item {
-      position:relative; overflow:hidden; border-radius:4px;
+      position:relative; overflow:hidden; border-radius:2px;
       aspect-ratio: 3/4; background:#1a1a1a;
     }
     .gallery-item img {
-      width:100%; height:100%; object-fit:cover; transition:0.6s ease;
-      filter: contrast(1.1) saturate(0.9);
+      width:100%; height:100%; object-fit:cover; transition:0.7s ease;
+      filter: contrast(1.15) saturate(0.85);
     }
-    .gallery-item:hover img { transform:scale(1.05); }
+    .gallery-item:hover img { transform:scale(1.06); }
     .gallery-caption {
-      position:absolute; bottom:0; left:0; right:0; padding:20px;
-      background:linear-gradient(transparent, rgba(0,0,0,0.8));
-      font-size:0.9rem; opacity:0; transition:0.4s;
+      position:absolute; bottom:0; left:0; right:0; padding:24px;
+      background:linear-gradient(transparent, rgba(0,0,0,0.85));
+      font-size:1rem; opacity:0; transition:0.4s;
+      letter-spacing:1px;
     }
     .gallery-item:hover .gallery-caption { opacity:1; }
     .shop-grid {
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:32px;
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:40px;
     }
     .print-card {
-      background:#111; border:1px solid rgba(201,169,98,0.2);
-      padding:32px; text-align:center; transition:0.3s;
+      background:#111; border:1px solid rgba(201,169,98,0.25);
+      padding:36px; text-align:center; transition:0.35s;
     }
-    .print-card:hover { border-color:var(--gold); transform:translateY(-4px); }
-    .print-card h3 { margin:16px 0 8px; font-size:1.6rem; }
-    .print-card .price { color:var(--gold); font-size:1.2rem; margin:12px 0 24px; }
+    .print-card:hover { border-color:var(--gold); transform:translateY(-6px); }
+    .print-card h3 { margin:18px 0 10px; font-size:1.8rem; }
+    .print-card .price { color:var(--gold); font-size:1.3rem; margin:16px 0 28px; }
+    .size-select {
+      margin: 16px 0; padding:10px; background:#0a0a0a; color:var(--text); border:1px solid rgba(201,169,98,0.3); width:100%; font-family:inherit;
+    }
     .buy-btn {
-      display:inline-block; padding:12px 28px; background:var(--gold); color:#0a0a0a;
-      letter-spacing:1.5px; font-size:0.8rem; text-transform:uppercase; font-weight:500;
+      display:inline-block; padding:14px 32px; background:var(--gold); color:#0a0a0a;
+      letter-spacing:1.8px; font-size:0.85rem; text-transform:uppercase; font-weight:500; cursor:pointer; border:none;
     }
     .buy-btn:hover { background:#fff; }
     footer {
-      background:#050505; text-align:center; padding:80px 20px 40px;
+      background:#050505; text-align:center; padding:100px 20px 50px;
       border-top:1px solid rgba(201,169,98,0.1);
     }
-    .social { margin-bottom:24px; font-size:1.4rem; }
-    .social a { margin:0 16px; color:var(--muted); }
+    .social { margin-bottom:28px; font-size:1.3rem; }
+    .social a { margin:0 18px; color:var(--muted); }
     .social a:hover { color:var(--gold); }
+    .note { text-align:center; margin-top:40px; color:var(--muted); font-size:0.95rem; max-width:700px; margin-left:auto; margin-right:auto; }
     @media (max-width:768px) {
       nav { padding:16px 20px; }
       .nav-links { display:none; }
-      section { padding:80px 20px; }
+      section { padding:90px 20px; }
+      .hero-content h1 { letter-spacing:8px; }
     }
   </style>
 </head>
@@ -153,10 +160,10 @@
 
 <section id="work">
   <h2 class="section-title">Selected Work</h2>
-  <p style="text-align:center; max-width:680px; margin:0 auto 50px; color:var(--muted);">I don’t shoot pretty sunsets and happy little birds. I hunt the raw, brutal, beautiful moments most people never see — mid-air violence, ravens in the mist, predators doing what they were built to do.</p>
+  <p style="text-align:center; max-width:720px; margin:0 auto 60px; color:var(--muted);">I don’t shoot pretty sunsets and happy little birds. I hunt the raw, brutal, beautiful moments most people never see — mid-air violence, ravens in the mist, predators doing what they were built to do.</p>
   <div class="gallery">
     <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1551184451-76b762941ad6?q=80&w=1200&auto=format&fit=crop" alt="Bald eagle">
+      <img src="https://images.unsplash.com/photo-1551184451-76b762941ad6?q=80&w=1200&auto=format&fit=crop" alt="Bald eagle on throne">
       <div class="gallery-caption">Throne · Limited Print</div>
     </div>
     <div class="gallery-item">
@@ -168,7 +175,7 @@
       <div class="gallery-caption">Omen · Available</div>
     </div>
     <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=1200&auto=format&fit=crop" alt="Wildlife">
+      <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=1200&auto=format&fit=crop" alt="Wildlife winter">
       <div class="gallery-caption">Winter Light · Print</div>
     </div>
   </div>
@@ -176,34 +183,49 @@
 
 <section id="shop">
   <h2 class="section-title">Limited Prints</h2>
-  <p style="text-align:center; max-width:600px; margin:0 auto 50px;">Museum-quality fine art prints of original wildlife photographs. Archival paper, pigment inks. Ready to hang or frame. Direct from the artist.</p>
+  <p style="text-align:center; max-width:640px; margin:0 auto 60px;">Museum-quality fine art prints of original wildlife photographs. Archival paper, pigment inks. Ready to hang or frame. Direct from the artist. No middleman.</p>
   <div class="shop-grid">
     <div class="print-card">
       <h3>Throne</h3>
-      <p>Bald eagle. Shadow and winter light.</p>
-      <div class="price">From $85 CAD</div>
-      <a href="https://obsidianwingstudio.etsy.com" class="buy-btn" target="_blank">Buy on Etsy</a>
+      <p>Bald eagle. Shadow and winter light. A real moment, not staged.</p>
+      <select class="size-select" onchange="updatePrice(this, 'throne')">
+        <option value="85">8x10 — $85 CAD</option>
+        <option value="120">11x14 — $120 CAD</option>
+        <option value="180">16x20 — $180 CAD</option>
+      </select>
+      <div class="price" id="price-throne">From $85 CAD</div>
+      <button class="buy-btn" onclick="buyPrint('Throne', this)">Purchase Print</button>
     </div>
     <div class="print-card">
       <h3>Horizon</h3>
-      <p>Not every king sits on a throne.</p>
-      <div class="price">From $95 CAD</div>
-      <a href="https://obsidianwingstudio.etsy.com" class="buy-btn" target="_blank">Buy on Etsy</a>
+      <p>Not every king sits on a throne. Some own the entire sky.</p>
+      <select class="size-select" onchange="updatePrice(this, 'horizon')">
+        <option value="95">8x10 — $95 CAD</option>
+        <option value="135">11x14 — $135 CAD</option>
+        <option value="195">16x20 — $195 CAD</option>
+      </select>
+      <div class="price" id="price-horizon">From $95 CAD</div>
+      <button class="buy-btn" onclick="buyPrint('Horizon', this)">Purchase Print</button>
     </div>
     <div class="print-card">
       <h3>Omen</h3>
-      <p>Raven cutting through the sky.</p>
-      <div class="price">From $75 CAD</div>
-      <a href="https://obsidianwingstudio.etsy.com" class="buy-btn" target="_blank">Buy on Etsy</a>
+      <p>Raven cutting through the sky. Dark omen, real wings.</p>
+      <select class="size-select" onchange="updatePrice(this, 'omen')">
+        <option value="75">8x10 — $75 CAD</option>
+        <option value="110">11x14 — $110 CAD</option>
+        <option value="165">16x20 — $165 CAD</option>
+      </select>
+      <div class="price" id="price-omen">From $75 CAD</div>
+      <button class="buy-btn" onclick="buyPrint('Omen', this)">Purchase Print</button>
     </div>
   </div>
-  <p style="text-align:center; margin-top:40px; color:var(--muted); font-size:0.9rem;">More sizes, frames, and exclusive editions available. Full shop launching soon — for now, secure your print via Etsy.</p>
+  <p class="note">Select size. Purchase opens your email client with the details pre-filled — or contact directly for custom sizes, framing, and exclusive editions. Full cart & checkout launching with Stripe soon. This is the real studio, not a marketplace.</p>
 </section>
 
 <section id="contact">
   <h2 class="section-title">Contact</h2>
   <div class="about-text">
-    <p>Commissions, editorial, or private inquiries.</p>
+    <p>Commissions, editorial, private inquiries, or to complete a print order.</p>
     <p><a href="mailto:milaluxx.official@gmail.com">milaluxx.official@gmail.com</a></p>
     <p>Moncton, New Brunswick</p>
   </div>
@@ -216,6 +238,22 @@
   </div>
   <p style="opacity:0.6; font-size:0.85rem;">© Obsidian Wing Studio · Mila Luxx · New Brunswick, Canada</p>
 </footer>
+
+<script>
+function updatePrice(select, id) {
+  const priceEl = document.getElementById('price-' + id);
+  priceEl.textContent = 'Selected: $' + select.value + ' CAD';
+}
+function buyPrint(title, btn) {
+  const card = btn.closest('.print-card');
+  const select = card.querySelector('.size-select');
+  const size = select.options[select.selectedIndex].text;
+  const price = select.value;
+  const subject = encodeURIComponent('Print Order: ' + title + ' — ' + size);
+  const body = encodeURIComponent('I would like to purchase:\n\n' + title + '\n' + size + '\n$' + price + ' CAD\n\nPlease send payment details (e-transfer, Stripe, etc.) and confirm availability.\n\nName:\nShipping address:\n');
+  window.location.href = 'mailto:milaluxx.official@gmail.com?subject=' + subject + '&body=' + body;
+}
+</script>
 
 </body>
 </html>
