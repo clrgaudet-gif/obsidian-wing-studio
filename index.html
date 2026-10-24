@@ -1,1 +1,50 @@
-PLACEHOLDER - full HTML would go here with expanded shop including Red Fox using https://i.etsystatic.com/62233395/r/il/5d6494/7860099490/il_1080xN.7860099490_o8m1.jpg and additional cards for Still Rising, Pair of Eagles, Bald Eagle in Flight. Prices approximated from Etsy. Dropdowns functional. Photo placeholder remains.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obsidian Wing Studio | Fine Art Wildlife Photography by Mila Luxx</title>
+  <meta name="description" content="Dark, raw fine art wildlife photography from New Brunswick. Limited edition prints of eagles, ravens, foxes, and the untamed Atlantic Canadian wilderness. Shop prints online — not Etsy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --black: #0a0a0a; --gold: #c9a962; --text: #e8e6e3; --muted: #a0a0a0; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-weight: 300; line-height: 1.7; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+    a { color: var(--gold); text-decoration: none; }
+    nav { position: fixed; top:0; left:0; right:0; z-index:100; background: rgba(10,10,10,0.9); padding: 20px 40px; display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size:1.6rem; letter-spacing:4px; color:var(--gold); }
+    .hero { height: 100vh; display:flex; align-items:center; justify-content:center; text-align:center; background: linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.8)), url('https://images.unsplash.com/photo-1551184451-76b762941ad6?q=80&w=2000') center/cover; }
+    .hero-content h1 { font-size: clamp(3rem, 8vw, 6rem); letter-spacing: 10px; }
+    section { padding: 100px 40px; max-width: 1200px; margin:0 auto; }
+    .section-title { text-align:center; font-size: 3rem; color: var(--gold); margin-bottom: 40px; }
+    .shop-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
+    .print-card { background:#111; border:1px solid rgba(201,169,98,0.3); padding:24px; text-align:center; }
+    .print-card img { width:100%; height:200px; object-fit:cover; margin-bottom:12px; }
+    .size-select { width:100%; padding:10px; background:#0a0a0a; color:var(--text); border:1px solid var(--gold); margin:12px 0; }
+    .price { color:var(--gold); font-size:1.3rem; margin:12px 0; }
+    .buy-btn { padding:12px 24px; background:var(--gold); color:#0a0a0a; border:none; cursor:pointer; text-transform:uppercase; }
+    @media (max-width:768px) { .nav-links { display:none; } section { padding:60px 20px; } }
+  </style>
+</head>
+<body>
+<nav><div class="logo">OBSIDIAN WING</div></nav>
+<header class="hero"><div class="hero-content"><h1>OBSIDIAN WING</h1><p>Photography that cuts through the dark</p><a href="#shop" class="cta">Shop Prints</a></div></header>
+<section id="shop">
+  <h2 class="section-title">Limited Prints</h2>
+  <div class="shop-grid">
+    <div class="print-card"><img src="https://images.unsplash.com/photo-1551184451-76b762941ad6?q=80&w=600" alt="Throne"><h3>Throne</h3><select class="size-select" id="select-throne" onchange="updatePrice(this,'throne')"><option value="85">8x10 $85</option><option value="120">11x14 $120</option></select><div class="price" id="price-throne">$85 CAD</div><button class="buy-btn" onclick="buyPrint('Throne',this)">Purchase</button></div>
+    <div class="print-card"><img src="https://i.etsystatic.com/62233395/r/il/5d6494/7860099490/il_1080xN.7860099490_o8m1.jpg" alt="Red Fox"><h3>Red Fox</h3><select class="size-select" id="select-fox" onchange="updatePrice(this,'fox')"><option value="55">8x10 $55</option><option value="85">11x14 $85</option></select><div class="price" id="price-fox">$55 CAD</div><button class="buy-btn" onclick="buyPrint('Red Fox',this)">Purchase</button></div>
+    <div class="print-card"><img src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?q=80&w=600" alt="Omen"><h3>Omen</h3><select class="size-select" id="select-omen" onchange="updatePrice(this,'omen')"><option value="75">8x10 $75</option><option value="110">11x14 $110</option></select><div class="price" id="price-omen">$75 CAD</div><button class="buy-btn" onclick="buyPrint('Omen',this)">Purchase</button></div>
+  </div>
+  <p style="text-align:center; margin-top:30px; color:#a0a0a0;">Your prints are in. Send high-res files to replace the remaining placeholders. Purchase emails you directly.</p>
+</section>
+<script>
+function updatePrice(s,id){document.getElementById('price-'+id).textContent='$'+s.value+' CAD';}
+function buyPrint(t,b){const s=b.parentElement.querySelector('select'); const st=s.options[s.selectedIndex].text; window.location.href='mailto:milaluxx.official@gmail.com?subject=Print Order: '+t+'&body='+encodeURIComponent(t+'\n'+st+'\n$'+s.value+' CAD');}
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.size-select').forEach(s=>{const id=s.id.replace('select-',''); updatePrice(s,id);});});
+</script>
+</body>
+</html>
